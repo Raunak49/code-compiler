@@ -82,7 +82,7 @@ function App() {
             setJobDetails(null);
             setOutput(`Code Execution Status: Running`);
             const { data } = await axios.post(
-                "http://65.0.5.215/run",
+                "http://13.232.121.204:5000/run",
                 payload
             );
             setJobId(data.id);
@@ -92,7 +92,7 @@ function App() {
                 setStatus("Running");
                 setOutput(`Code Execution Status: Running`);
                 const dataRes  = await axios.get(
-                    `http://65.0.5.215/status/${data.id}`
+                    `http://13.232.121.204:5000/status/${data.id}`
                 );
                 
                 if (dataRes.status === 200) {
